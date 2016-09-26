@@ -1,0 +1,5 @@
+{
+ "id": "stage",
+ "pass": "stage_sql",
+ "user" : "stage_usr"
+}

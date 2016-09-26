@@ -1,0 +1,35 @@
+{
+  "name": "stage",
+  "default_attributes":
+  {
+    "apache2": 
+    {
+      "listen_ports":
+      [
+        "80",
+        "443"
+      ]
+    },
+    "learn_chef_httpd":
+    {
+      "testattr": "California"
+    },
+    "webserver":
+    {
+	"IP": "192.168.10.5",
+	"Port": "9090"
+    },
+    "dbserver":
+    {
+    	"IP": "192.168.10.3",
+	"Port": "9080"
+    }
+  },
+  "json_class": "Chef::Environment",
+  "description": "Pre prod environment",
+  "cookbook_versions": 
+  {
+    "learn_chef_httpd": "= 0.2.0"
+  },
+  "chef_type": "environment"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "webserver",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "apache2": {
+      "listen_ports": [
+        "80",
+        "443"
+      ]
+    },
+     "server_type": {
+      "type": "Web Server",
+      "sub_type": "Apache"
+    }, 
+    "learn_chef_httpd":
+    {
+      "testattr": "New York"
+    }
+  },
+  "description": "The base role for systems that serve HTTP traffic",
+  "run_list": [
+    "recipe[learn_chef_httpd]"
+  ]
+}
