@@ -58,7 +58,7 @@ execute 'chkconfig --add mysqld'
 execute 'chkconfig mysqld on'
 
 #service sqld start
-ervice "sqld" do
+service "sqld" do
   action :start
 end
 
