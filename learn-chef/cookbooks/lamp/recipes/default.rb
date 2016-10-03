@@ -70,10 +70,18 @@ execute 'mysql -u root -e "SHOW DATABASES";'
 
 # Download starter content
 #cd /vagrant; sudo -u vagrant wget -q https://raw.githubusercontent.com/knightz007/vagrant/master/files/index.html
-execute 'cd /var/www/html; sudo wget -q https://raw.githubusercontent.com/knightz007/vagrant/master/files/index.html'
+#execute 'cd /var/www/html; sudo wget -q https://raw.githubusercontent.com/knightz007/vagrant/master/files/index.html'
+
+template '/var/www/html/index.html' do
+	source 'index.html.erb'
+end
 
 #cd /vagrant;sudo -u vagrant wget -q https://raw.githubusercontent.com/knightz007/vagrant/master/files/info.php
-execute 'cd /var/www/html; sudo wget -q https://raw.githubusercontent.com/knightz007/vagrant/master/files/info.php'
+#execute 'cd /var/www/html; sudo wget -q https://raw.githubusercontent.com/knightz007/vagrant/master/files/info.php'
+
+template '/var/www/html/info.php' do
+	source 'info.php.erb'
+end
 
 #service httpd restart
 service "httpd" do
