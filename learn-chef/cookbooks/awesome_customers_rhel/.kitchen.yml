@@ -15,3 +15,7 @@ suites:
     run_list:
       - recipe[awesome_customers_rhel::default]
     attributes:
+      awesome_customers_rhel:
+        database:
+          root_password: 'mysql_root_password'
+          admin_password: 'mysql_admin_password'
