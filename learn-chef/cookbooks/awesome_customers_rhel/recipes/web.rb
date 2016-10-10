@@ -22,9 +22,20 @@ directory node['awesome_customers_rhel']['document_root'] do
 end
 
 # Write the home page.
-file "#{node['awesome_customers_rhel']['document_root']}/index.html" do
-  content '<html>This is a placeholder</html>'
+template "#{node['awesome_customers_rhel']['document_root']}/index.php" do
+  source 'index.php.erb'
   mode '0644'
-  owner 'web_admin'
-  group 'web_admin'
+  owner node['awesome_customers_rhel']['user']
+  group node['awesome_customers_rhel']['group']
+end
+
+# Install the mod_php Apache module.
+httpd_module 'php' do
+  instance 'customers'
+end
+
+# Install php-mysql.
+package 'php-mysql' do
+  action :install
+  notifies :restart, 'httpd_service[customers]'
 end
