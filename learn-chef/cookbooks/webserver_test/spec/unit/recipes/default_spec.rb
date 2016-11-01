@@ -2,8 +2,7 @@
 # Cookbook Name:: webserver_test
 # Spec:: default
 #
-# Copyright (c) 2016 The Authors, All Rights Reserved.
-
+# Copyright (c) 2016 The Authors, All Rights Reserved
 require 'spec_helper'
 
 shared_examples 'webserver_test' do |platform, version, package, service|
